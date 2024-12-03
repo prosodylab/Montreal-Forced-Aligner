@@ -144,7 +144,7 @@ class Archive(MfaModel):
             os.makedirs(root_directory, exist_ok=True)
             unpack_archive(source, self.dirname)
             files = [x for x in self.dirname.iterdir()]
-            old_dir_path = self.dirname.joinpath(files[0])
+            old_dir_path = files[0]
             if len(files) == 1 and old_dir_path.is_dir():  # Backwards compatibility
                 for f in old_dir_path.iterdir():
                     f = f.relative_to(old_dir_path)
