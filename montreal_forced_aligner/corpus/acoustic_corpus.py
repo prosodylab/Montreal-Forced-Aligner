@@ -933,7 +933,7 @@ class AcousticCorpusMixin(CorpusMixin, FeatureConfigMixin, metaclass=ABCMeta):
                             for e in error_dict[k]:
                                 logger.debug(f"{e.file_name}: {e.error}")
                         else:
-                            logger.debug(", ".join(error_dict[k]))
+                            logger.debug(", ".join(str(error_dict[k])))
                             setattr(self, k, error_dict[k])
 
         except Exception as e:
